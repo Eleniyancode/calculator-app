@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Calculator app</title>
 
+  <script defer src="script.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -16,6 +17,64 @@
 </head>
 <body>
 
+<div class="container">
+  <header>
+    <h1>calc</h1>
+    <div class="theme-div">
+      <p>THEME</p>
+      <div class="theme-toggle-div">
+        <div class="theme-number-div">
+          <p onclick="setTheme('default')">1</p>
+          <p onclick="setTheme('gray')">2</p>
+          <p onclick="setTheme('gold')">3</p>
+        </div>
+        <div class="theme-toggle-box">
+          <p class="theme-active"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="calc-screen">
+    <p>0</p>
+  </div>
+
+<div class="calc-digits">
+  <div class="row">
+    <p class="calc-number">7</p>
+    <p class="calc-number">8</p>
+    <p class="calc-number">9</p>
+    <p id="delete-btn">DEL</p>
+  </div>
+
+  <div class="row">
+    <p class="calc-number">4</p>
+    <p class="calc-number">5</p>
+    <p class="calc-number">6</p>
+    <p class="calc-number">+</p>
+  </div>
+
+  <div class="row">
+    <p class="calc-number">1</p>
+    <p class="calc-number">2</p>
+    <p class="calc-number">3</p>
+    <p class="calc-number">-</p>
+  </div>
+
+  <div class="row">
+    <p class="calc-number">.</p>
+    <p class="calc-number">0</p>
+    <p class="calc-number">/</p>
+    <p class="calc-number">*</p>
+  </div>
+
+  <div class="row">
+    <p id="reset-btn">RESET</p>
+    <p id="equal-btn">=</p>
+  </div>
+  </div>
+
+</div>
 
   
   <div class="attribution">

@@ -1,0 +1,201 @@
+:root {
+    --bg-color: hsl(222, 26%, 31%);
+    --text-pry-color: white;
+    --theme-toggle-box-color: hsl(223, 31%, 20%);
+    --theme-active-color: red;
+    --calc-screen-color: hsl(224, 36%, 15%);
+    --calc-digits-color: hsl(223, 31%, 20%);
+    --p-border-bottom-color: hsl(28, 16%, 65%);
+    --text-sec-color: hsl(225, 21%, 49%);
+    --p-color: hsl(30, 25%, 89%);
+    --keypad-color: hsl(225, 21%, 49%);
+    --keypad-border-color: hsl(224, 28%, 35%);
+    --equal-keypad-color:hsl(6, 63%, 50%);
+    --equal-keypad-border-color:hsl(6, 70%, 34%);
+    --justify-content: flex-start;
+}
+
+.theme-gray {
+    --bg-color: hsl(0, 0%, 90%);
+    --text-pry-color: black;
+    --theme-toggle-box-color: hsl(0, 5%, 81%);
+    --theme-active-color: red;
+    --calc-screen-color: hsl(0, 0%, 93%);
+    --calc-digits-color: hsl(0, 5%, 81%);
+    --p-border-bottom-color: hsl(35, 11%, 61%);
+    --text-sec-color: black;
+    --p-color: hsl(45, 7%, 89%);
+    --keypad-color: hsl(185, 42%, 37%);
+    --keypad-border-color: hsl(224, 28%, 35%);
+    --equal-keypad-color:hsl(6, 63%, 50%);
+    --equal-keypad-border-color:hsl(6, 70%, 34%);
+}
+
+.theme-gold {
+    --bg-color: hsl(268, 75%, 9%);
+    --text-pry-color: hsl(52, 100%, 62%);
+    --theme-toggle-box-color: hsl(268, 71%, 12%);
+    --theme-active-color: hsl(176, 100%, 44%);
+    --calc-screen-color: hsl(268, 71%, 12%);
+    --calc-digits-color: hsl(268, 71%, 12%);
+    --p-border-bottom-color: hsl(290, 70%, 36%);
+    --text-sec-color: black;
+    --p-color: hsl(268, 47%, 21%);
+    --keypad-color: hsl(281, 89%, 26%);
+    --keypad-border-color: hsl(285, 91%, 52%);
+    --equal-keypad-color:hsl(176, 100%, 44%);
+    --equal-keypad-border-color:hsl(177, 92%, 70%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 90%;
+    height: 100vh;
+    /* border: 1px solid black; */
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-pry-color);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--text-pry-color);
+}
+
+.theme-div {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    width: 40%;
+    padding-inline-end: 2rem;
+    /* border: 1px solid black; */
+}
+
+/* .theme-toggle-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+} */
+
+.theme-number-div {
+    display: flex;
+    gap: 1.2rem;
+    padding: 4px;
+}
+
+.theme-toggle-box {
+    width: 50px;
+    height: 20px;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    /* padding-left: 4px;
+    padding-top: 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: var(--justify-content);
+    background-color: var(--theme-toggle-box-color);
+}
+
+.theme-active {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--theme-active-color);
+}
+
+.calc-screen {
+    width: 100%;
+    height: 100px;
+    margin-block-start: 30px;
+    margin-block-end: 20px;
+    /* background-color: ; */
+    /* border: 1px solid black; */
+    padding: 1rem;
+    font-size: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 800;
+    overflow-x: auto;
+    border-radius: 10px;
+    background-color: var(--calc-screen-color);
+    color: var(--text-pry-color);
+}
+
+.calc-digits{
+    /* border: 2px solid black; */
+    padding: 2rem;
+    /* grid-template-columns: 4fr; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--calc-digits-color);
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.row p {
+    padding: 1rem;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 3rem;
+    /* border: 1px solid black; */
+    border-bottom: 3px solid var(--p-border-bottom-color);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    color: var(--text-sec-color);
+    background-color: var(--p-color);
+}
+
+#reset-btn, #delete-btn {
+    font-size: 1.6rem;
+    background-color: var(--keypad-color);
+    color: var(--text-pry-color);
+    border-color: var(--keypad-border-color);
+}
+
+#reset-btn {
+    width: 140px;
+}
+
+#equal-btn {
+    width: 140px;
+    color: white;
+    background-color: var(--equal-keypad-color);
+    border-color: var(--equal-keypad-border-color);
+}
