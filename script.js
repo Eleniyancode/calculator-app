@@ -34,7 +34,6 @@ calcNumberEl.forEach((number) => {
     result = undefined;
     // input.push(number.textContent)
     expression += number.textContent;
-    console.log(expression);
 
     calcScreenEl.textContent = formatExpression(expression);
 
@@ -44,20 +43,16 @@ calcNumberEl.forEach((number) => {
 
 //evaluating the input on the calculator screen
 equalBtnEl.addEventListener("click", function () {
-  //   let calculation = calcScreenEl.textContent;
   result = eval(expression);
   expression = result.toString();
-  console.log(typeof result, typeof expression);
   calcScreenEl.textContent = formatExpression(expression);
-  // calcScreenEl.innerText = ''
 });
 
 //deleting an input from the calculator screen
-
 deleteBtnEl.addEventListener("click", function () {
-  let output = calcScreenEl.textContent;
+  let output = expression;
   if (output.length === 1) {
-    output = calcScreenEl.textContent = 0;
+    calcScreenEl.textContent = expression = 0;
   } else {
     calcScreenEl.textContent = output.slice(0, -1);
   }
