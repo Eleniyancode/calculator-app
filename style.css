@@ -249,7 +249,38 @@ header h1 {
 }
 
 @media (min-width: 600px) {
+
+    body {
+        display:  flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
   .container {
     max-width: 30%;
+    /* height: 70%; */
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+
+  }
+
+  .calc-screen {
+    width: 100%;
+  }
+
+  .calc-digits {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  .theme-div {
+    justify-content: flex-end;
   }
 }

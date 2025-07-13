@@ -13,31 +13,31 @@ let expression = "";
 
 //reseting the calculator screen
 resetBtnEl.addEventListener("click", function () {
-  expression = "0";
+  expression = calcScreenEl.textContent = "0";
 });
 
 //adding numbers to the calculator screen
 calcNumberEl.forEach((number) => {
   number.addEventListener("click", function (e) {
     //making digit zero functional when using th calculator for the first time
-    if (expression === "0" || result) {
+    if (calcScreenEl.textContent === "0" || result) {
       if (
         e.currentTarget.textContent === "-" ||
         e.currentTarget.textContent === "+" ||
         e.currentTarget.textContent === "/" ||
         e.currentTarget.textContent === "*"
       ) {
-        expression += "";
+        calcScreenEl.textContent = "";
       } else expression = "";
     }
 
-    result = undefined;
     // input.push(number.textContent)
     expression += number.textContent;
-
+    console.log(expression);
     calcScreenEl.textContent = formatExpression(expression);
-
-    preventAddingMultipleOperator(e);
+    
+    preventAddingMultipleOperator(e, number);
+    result = undefined;
   });
 });
 
@@ -50,19 +50,20 @@ equalBtnEl.addEventListener("click", function () {
 
 //deleting an input from the calculator screen
 deleteBtnEl.addEventListener("click", function () {
-  let output = expression;
+  let output = calcScreenEl.textContent;
   if (output.length === 1) {
-    calcScreenEl.textContent = expression = 0;
+    calcScreenEl.textContent = output = 0;
   } else {
     calcScreenEl.textContent = output.slice(0, -1);
   }
 });
 
 //preventing adding multiple operator to the screen
-const preventAddingMultipleOperator = function (e) {
+const preventAddingMultipleOperator = function (e, number) {
   let output = calcScreenEl.textContent;
   //get the last input made
   const lastInput = output[output.length - 2];
+  // console.log(lastInput);
   if (
     lastInput === "-" ||
     lastInput === "+" ||
@@ -75,7 +76,12 @@ const preventAddingMultipleOperator = function (e) {
       e.currentTarget.textContent === "/" ||
       e.currentTarget.textContent === "*"
     ) {
+        console.log(expression);
+        console.log(expression.slice(0, -1));
+        // console.log(calcScreenEl.textContent);
+        // number.textContent = ''
       calcScreenEl.textContent = calcScreenEl.textContent.slice(0, -1);
+    // calcScreenEl.textContent += ''
     }
   }
 };
